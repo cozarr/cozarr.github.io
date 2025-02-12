@@ -31,6 +31,13 @@
             display: none;
             margin-top: 20px;
         }
+        #message {
+            display: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-top: 20px;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
@@ -39,6 +46,7 @@
         function respondYes() {
             confetti();
             document.getElementById("gifContainer").style.display = "block";
+            document.getElementById("message").style.display = "block";
         }
         function respondNo() {
             yesButtonSize += 5;
@@ -60,8 +68,9 @@
         <button id="yesButton" onclick="respondYes()">Yes</button>
         <button id="noButton" onclick="respondNo()">No</button>
     </div>
+    <div id="message">Yay! ❤️</div>
     <div id="gifContainer">
-        <img src="fox-and-raccoon-ride.gif" alt="Happy GIF">
+        <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Happy GIF">
     </div>
 </body>
 </html>
