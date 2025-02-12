@@ -16,6 +16,7 @@
         }
         .buttons {
             margin-top: 20px;
+            position: relative;
         }
         button {
             font-size: 16px;
@@ -23,16 +24,28 @@
             margin: 5px;
             cursor: pointer;
         }
+        #noButton {
+            position: absolute;
+        }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
         let yesButtonSize = 16;
 
         function respondYes() {
+            confetti();
             alert("Yay! ❤️");
         }
         function respondNo() {
             yesButtonSize += 5;
             document.getElementById("yesButton").style.fontSize = yesButtonSize + "px";
+            moveNoButton();
+        }
+        function moveNoButton() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            document.getElementById("noButton").style.left = x + "px";
+            document.getElementById("noButton").style.top = y + "px";
         }
     </script>
 </head>
@@ -41,7 +54,7 @@
     <img src="meandu.jpg" alt="Sample Image">
     <div class="buttons">
         <button id="yesButton" onclick="respondYes()">Yes</button>
-        <button onclick="respondNo()">No</button>
+        <button id="noButton" onclick="respondNo()">No</button>
     </div>
 </body>
 </html>
