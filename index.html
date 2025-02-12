@@ -14,10 +14,34 @@
             max-width: 100%;
             height: auto;
         }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
     </style>
+    <script>
+        let yesButtonSize = 16;
+
+        function respondYes() {
+            alert("Yay! ❤️");
+        }
+        function respondNo() {
+            yesButtonSize += 5;
+            document.getElementById("yesButton").style.fontSize = yesButtonSize + "px";
+        }
+    </script>
 </head>
 <body>
-    <p>Will u be my Valentine <3</p>
+    <p>Will you be my Valentine? <3</p>
     <img src="meandu.jpg" alt="Sample Image">
+    <div class="buttons">
+        <button id="yesButton" onclick="respondYes()">Yes</button>
+        <button onclick="respondNo()">No</button>
+    </div>
 </body>
 </html>
